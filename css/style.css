@@ -1,0 +1,92 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(14, 14, 14);
+
+}
+
+.wrapper-div {
+    background-color: red;
+    width: 200px;
+}
+button {
+    background-color: transparent;
+    border: none;
+
+    position: relative;
+    z-index: 1;
+
+    border: 1px solid rgb(109, 109, 109);
+    font-size: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    color: white;
+
+    cursor: pointer;
+}
+button::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: rgb(5, 179, 106);
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    transition: .3s;
+
+}
+button:focus,:hover,:active {
+    outline: none;
+}
+button:hover::before {
+    width: 100%;
+}
+.title-game {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+.loading {
+    border: 5px solid white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-top: 5px solid rgb(0, 218, 109);
+
+    animation:  loading .7s ease-in-out infinite;
+    transition: .5s ease-in-out;
+    overflow: hidden;
+}
+
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.color-circle {
+    background-color: rgb(0, 218, 109);
+    width: 110%;
+    height: 110%;
+    position: absolute;
+    top: 0;
+
+    transition: 2s;
+    right: 105px;
+
+}
+
+.loading:hover .color-circle {
+    right: 0;
+}
